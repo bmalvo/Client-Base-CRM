@@ -1,0 +1,23 @@
+{
+  "name": "client-base-crm",
+  "version": "1.0.0",
+  "description": "simple client base create in express.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmalvo/Client-Base-CRM.git"
+  },
+  "author": "bmalvo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmalvo/Client-Base-CRM/issues"
+  },
+  "homepage": "https://github.com/bmalvo/Client-Base-CRM#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2"
+  }
+}
