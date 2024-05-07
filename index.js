@@ -8,7 +8,7 @@ app.use(express.urlencoded({
 }));
 
 app.use(express.static('public'))
-
+app.use(express.json());
 app.engine('.hbs', hbs({
     extname: '.hbs',
     // helpers: handlebarsHelpers,
