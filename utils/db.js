@@ -1,5 +1,6 @@
 const { readFile, writeFile } = require('fs').promises;
 const { join } = require('path');
+const {  v4: uuid} = require('uuid');
 
 class Db {
     constructor(dbFilename) {
@@ -13,7 +14,10 @@ class Db {
     }
 
     create(obj) {
-        this._data.push(obj);
+        this._data.push({
+            id: uuid(),
+            ...obj
+        });
         writeFile(this.dbFilename, JSON.stringify(this._data), 'utf8');
     }
 };
