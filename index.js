@@ -1,7 +1,8 @@
 const express = require('express');
 const hbs = require('express-handlebars');
-const {clientRouter} = require('./routers/client')
-const {homeRouter} = require('./routers/home')
+const { clientRouter } = require('./routers/client');
+const { homeRouter } = require('./routers/home');
+const { db } = require('./utils/db');
 
 const app = express();
 
@@ -17,8 +18,15 @@ app.engine('.hbs', hbs.engine({
 }));
 app.set('view engine', '.hbs');
 
-app.use('/', homeRouter)
-app.use('/client', clientRouter)
+app.use('/', homeRouter);
+app.use('/client', clientRouter);
+app.get('/test', (req, res) => {
+    db.create({
+        name: 'Stefka',
+        mail: 'cat@cat.com',
+    });
+    res.send('OK');
+});
 
 app.listen(3000, 'localhost', () => {
     console.log('Listening on http://localhost:3000');
