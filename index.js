@@ -21,11 +21,7 @@ app.set('view engine', '.hbs');
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
 app.get('/test', (req, res) => {
-    db.create({
-        name: 'Stefka',
-        mail: 'cat@cat.com',
-    });
-    res.send('OK');
+    res.json(db.getAll());
 });
 
 app.listen(3000, 'localhost', () => {
