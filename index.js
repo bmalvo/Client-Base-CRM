@@ -20,9 +20,6 @@ app.set('view engine', '.hbs');
 
 app.use('/', homeRouter);
 app.use('/client', clientRouter);
-app.get('/test', (req, res) => {
-    res.json(db.getAll());
-});
 
 app.listen(3000, 'localhost', () => {
     console.log('Listening on http://localhost:3000');
