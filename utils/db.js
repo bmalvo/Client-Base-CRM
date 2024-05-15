@@ -30,6 +30,10 @@ class Db {
     return this._data;
     };
 
+    getOne(id) {
+        return this._data.find(oneObj => oneObj === id);
+    }
+
     update(id, newObj) {
         this._data = this._data.map(oneObj => {
             oneObj.id === id ? {
