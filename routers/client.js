@@ -21,7 +21,9 @@ clientRouter
         res.send('modificate')
     })
     .delete('/:id', (req, res) => {
-        res.send('delete');
+        // res.send('delete');
+        db.delete(req.params.id);
+        res.render('client/deleted');
     })
 
 module.exports = {
