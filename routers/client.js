@@ -10,7 +10,9 @@ clientRouter
         });
     })
     .get('/:id', (req, res) => {
-        res.send('get one');
+        res.render('client/one', {
+            client: db.getOne(req.params.id),
+        });
     })
     .post('/', (req, res) => {
         res.send('add');

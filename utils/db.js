@@ -31,7 +31,7 @@ class Db {
     };
 
     getOne(id) {
-        return this._data.find(oneObj => oneObj === id);
+        return this._data.find(oneObj => oneObj.id === id);
     }
 
     update(id, newObj) {

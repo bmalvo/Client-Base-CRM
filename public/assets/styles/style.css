@@ -9,14 +9,16 @@ tr {
 
 }
 
-thead tr {
+tr:nth-child(2n) {
+    background-color: #cfc3c3;
+}
+
+thead tr, .header-on-left th {
     background-color: #969696;
 }
 
-tr:nth-child(2) {
-    background-color: #cfc3c3;
-}
 
 td, th {
     padding: 6px;
 }
+
