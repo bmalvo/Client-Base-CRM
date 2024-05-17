@@ -22,7 +22,12 @@ clientRouter
         });
     })
     .put('/:id', (req, res) => {
-        res.send('modificate')
+        db.update(req.params.id, req.body);
+
+        res.render('client/modified', {
+            name: req.body.name,
+            id: req.params.id,
+        });
     })
     .delete('/:id', (req, res) => {
         db.delete(req.params.id);
@@ -30,6 +35,11 @@ clientRouter
     })
     .get('/forms/add', (req, res) => {
         res.render('client/forms/add');
+    })
+    .get('/forms/edit/:id', (req, res) => {
+        res.render('client/forms/edit', {
+            client: db.getOne(req.params.id),
+        });
     });
 
 module.exports = {

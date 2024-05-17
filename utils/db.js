@@ -39,7 +39,7 @@ class Db {
 
     update(id, newObj) {
         this._data = this._data.map(oneObj => {
-            oneObj.id === id ? {
+            return oneObj.id === id ? {
                 ...oneObj,
                 ...newObj,
             } : oneObj
